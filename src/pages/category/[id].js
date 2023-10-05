@@ -1,9 +1,13 @@
 import RootLayout from '@/components/Layouts/RootLayout';
+import { addProduct } from '@/redux/features/product/productSlice';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
+import { useDispatch } from 'react-redux';
 
 const CategoryProducts = ({ products }) => {
+
+    const dispatch = useDispatch()
     return (
         <div className=" p-10 grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-6">
             {
@@ -27,6 +31,13 @@ const CategoryProducts = ({ products }) => {
                             <p>Category: <span className='font-semibold'>{product?.category.category}</span></p>
                             <p>Ratings:  <span className='font-semibold'>{product?.average_rating}</span></p>
                         </div>
+                        <div className='flex justify-end w-full mt-6'>
+                            <Link href='/category'>
+                                <label onClick={() => dispatch(addProduct(product))} className='btn btn-primary w-full'>
+                                    Add To Builder
+                                </label>
+                            </Link>
+                        </div>
                     </div>
                 ))
             }
@@ -44,7 +55,6 @@ export const getServerSideProps = async (context) => {
     const { params } = context
     const res = await fetch(`https://pc-builder-backend-phi.vercel.app/api/v1/products/category/${params.id}`)
     const data = await res.json()
-    console.log(data);
     return {
         props: {
             products: data.data
