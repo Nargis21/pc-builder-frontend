@@ -1,9 +1,17 @@
+import Image from "next/image";
+
 const ProductDetails = ({ product }) => {
     const keyFeaturesArray = Object.entries(product.key_features).map(([key, value]) => `${key}: ${value}`);
     return (
         <div className="lg:flex mx-auto items-center border-b border-gray-300 lg:w-[80%] w-[95%]">
             <div className="lg:w-[50%]">
-                <img src={product?.image} alt="" />
+                <Image
+                    src={product?.image}
+                    width={500}
+                    height={200}
+                    responsive
+                    alt="product image"
+                />
             </div>
             <div className="lg:w-[50%] space-y-2 font-semibold">
                 <h1 className="text-3xl ">{product?.name}</h1>
