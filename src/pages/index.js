@@ -12,15 +12,6 @@ const HomePage = ({ products, categories }) => {
       </div>
       <Products products={products}></Products>
 
-      Render the categories data
-      <div>
-        <h2>Categories</h2>
-        <ul>
-          {categories?.map((category) => (
-            <li key={category._id}>{category.category}</li>
-          ))}
-        </ul>
-      </div>
     </div>
   );
 };
