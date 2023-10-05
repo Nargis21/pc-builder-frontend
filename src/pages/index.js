@@ -1,4 +1,5 @@
 import RootLayout from '@/components/Layouts/RootLayout';
+import Categories from '@/components/UI/Categories';
 import Products from '@/components/UI/Products';
 import React from 'react';
 
@@ -11,7 +12,11 @@ const HomePage = ({ products, categories }) => {
         <p className='pt-2'>Check & Get Your Desired Product!</p>
       </div>
       <Products products={products}></Products>
-
+      <div className='font-semibold text-center pt-10'>
+        <h1 className='text-2xl'>Featured Categories</h1>
+        <p className='pt-2'>Get Your Desired Product from Featured Category!</p>
+      </div>
+      <Categories categories={categories}></Categories>
     </div>
   );
 };

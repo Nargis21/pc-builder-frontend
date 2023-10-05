@@ -8,16 +8,16 @@ const Products = ({ products }) => {
             {
                 products?.map((product) => (
                     <Link key={product._id} href={`/product/${product._id}`} >
-                        <div className="rounded-2xl h-[500px] flex flex-col items-start justify-between p-5 shadow-md border border-gray-100 hover:shadow-2xl hover:scale-[102%] transition-all bg-white">
+                        <div className="rounded-2xl flex flex-col items-center justify-between p-5 shadow-md border border-gray-100 hover:shadow-2xl hover:scale-[102%] transition-all bg-white">
                             {/* <img src={product?.image} alt="product" width={300} /> */}
                             <Image
                                 src={product?.image}
-                                width={500}
+                                width={300}
                                 height={200}
                                 responsive
                                 alt="product image"
                             />
-                            <h1 className="text-xl font-semibold mt-2">{product?.name}</h1>
+                            <h1 className="text-xl font-semibold my-3 flex items-start w-full">{product?.name}</h1>
 
                             <div className='flex justify-between w-full items-center mb-2'>
                                 <p className="text-xl text-indigo-500 font-bold">${product?.price}</p>
