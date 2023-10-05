@@ -4,11 +4,11 @@ import React from 'react';
 const Products = ({ products }) => {
     return (
         <div>
-            <div className=" p-10 grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-6 ">
+            <div className=" p-10 grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-6">
                 {
                     products?.map((product) => (
-                        <div key={product._id} className="rounded-2xl h-[500px] flex flex-col items-start justify-between p-5 shadow-md border border-gray-100 hover:shadow-2xl hover:scale-[102%] transition-all">
-                            <Link href={`/product/${product.id}`} className="w-full">
+                        <div key={product._id} className="rounded-2xl h-[500px] flex flex-col items-start justify-between p-5 shadow-md border border-gray-100 hover:shadow-2xl hover:scale-[102%] transition-all bg-white">
+                            <Link href={`/product/${product._id}`} className="w-full">
                                 <img src={product?.image} alt="product" width={300} />
                                 <h1 className="text-xl font-semibold mb-2">{product?.name}</h1>
                             </Link>
