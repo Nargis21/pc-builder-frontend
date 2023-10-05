@@ -1,8 +1,11 @@
+import { useGetCategoriesQuery } from '@/redux/api/apiSlice';
 import Link from 'next/link';
 import React from 'react';
 import { FaComputer } from "react-icons/fa";
 
 const Navbar = () => {
+
+    const { data, error, isLoading } = useGetCategoriesQuery()
 
     const menuItems = (
         <>
@@ -12,9 +15,12 @@ const Navbar = () => {
             <li tabIndex={0}>
                 <details>
                     <summary>Categories</summary>
-                    <ul className="w-52 rounded">
-                        <li><a>Submenu 1</a></li>
-                        <li><a>Submenu 2</a></li>
+                    <ul className="w-52 rounded z-20">
+                        {
+                            data?.data?.map((category) => (
+                                <li key={category._id}><Link href={`/products/${category?._id}`}>{category.category}</Link></li>
+                            ))
+                        }
                     </ul>
                 </details>
             </li>
