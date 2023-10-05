@@ -3,7 +3,6 @@ import ProductDetails from '@/components/UI/ProductDetails';
 import React from 'react';
 
 const ProductDetailsPage = ({ product }) => {
-    console.log(product);
     return (
         <div>
             <ProductDetails product={product}></ProductDetails>

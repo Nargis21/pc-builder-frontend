@@ -26,7 +26,7 @@ const Navbar = () => {
             </li>
             <li>
                 <Link
-                    href="/"
+                    href="/category"
                     className="border border-white text-white rounded px-4 py-2 hover:bg-white ml-2"
                 >
                     PC Builder
