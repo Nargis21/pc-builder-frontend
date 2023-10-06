@@ -24,7 +24,7 @@ const Products = ({ products }) => {
                         </div>
                         <div className='flex justify-between w-full items-center'>
                             <p>Category: <span className='font-semibold'>{product?.category.category}</span></p>
-                            <p><StarRating rating={product?.average_rating} /></p>
+                            <StarRating rating={product?.average_rating} />
                         </div>
                     </div>
                 </Link>

@@ -1,4 +1,5 @@
 import RootLayout from '@/components/Layouts/RootLayout';
+import StarRating from '@/components/UI/StartRating';
 import { addProduct } from '@/redux/features/product/productSlice';
 import Head from 'next/head';
 import Image from 'next/image';
@@ -41,11 +42,11 @@ const CategoryProducts = ({ products }) => {
                             </div>
                             <div className='flex justify-between w-full items-center'>
                                 <p>Category: <span className='font-semibold'>{product?.category.category}</span></p>
-                                <p>Ratings:  <span className='font-semibold'>{product?.average_rating}</span></p>
+                                <StarRating rating={product?.average_rating} />
                             </div>
                             <div className='w-full mt-6'>
                                 <Link href='/category'>
-                                    <label onClick={() => dispatch(addProduct(product))} className='border-2 border-primary hover:bg-indigo-500 text-black rounded px-4 py-2  hover:text-white flex items-center justify-center gap-1 font-semibold cursor-pointer'>
+                                    <label onClick={() => dispatch(addProduct(product))} className='border-2 border-indigo-500 hover:bg-indigo-500 text-black rounded px-4 py-2  hover:text-white flex items-center justify-center gap-1 font-semibold cursor-pointer'>
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
                                             <path fillRule="evenodd" d="M12 3.75a.75.75 0 01.75.75v6.75h6.75a.75.75 0 010 1.5h-6.75v6.75a.75.75 0 01-1.5 0v-6.75H4.5a.75.75 0 010-1.5h6.75V4.5a.75.75 0 01.75-.75z" clipRule="evenodd" />
                                         </svg>
