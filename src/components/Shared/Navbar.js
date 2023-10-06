@@ -25,7 +25,7 @@ const Navbar = () => {
                     </ul>
                 </details>
             </li>
-            <li>
+            <li className='lg:mb-0 mb-2'>
                 <Link
                     href="/category"
                     className="border border-white text-white rounded px-4 py-2 hover:bg-white ml-2"
@@ -44,24 +44,6 @@ const Navbar = () => {
                 }
 
             </li>
-
-            {/* <li>
-                {user ? (
-                    <button
-                        onClick={handleLogout}
-                        className="border border-white rounded px-4 py-2 hover:bg-white ml-2"
-                    >
-                        Logout <PiSignOutBold></PiSignOutBold>
-                    </button>
-                ) : (
-                    <Link
-                        to="/login"
-                        className="border border-white rounded px-4 py-2 hover:bg-white ml-2"
-                    >
-                        Login <PiSignInBold></PiSignInBold>
-                    </Link>
-                )}
-            </li> */}
         </>
     );
 
@@ -87,7 +69,7 @@ const Navbar = () => {
                     </label>
                     <ul
                         tabIndex={0}
-                        className="menu menu-sm dropdown-content mt-2 z-[1] p-2 shadow bg-green-200 rounded w-64 font-bold"
+                        className="menu menu-sm dropdown-content mt-2 z-[1] p-2 shadow bg-indigo-300 rounded w-64 font-bold shadow-lg"
                     >
                         {menuItems}
                     </ul>

@@ -1,12 +1,26 @@
 import RootLayout from '@/components/Layouts/RootLayout';
+import { setCompleteBuild } from '@/redux/features/product/productSlice';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const CategoryPage = ({ allCategory }) => {
-    const { products } = useSelector((state) => state.product);
+    const { products, completeBuild } = useSelector((state) => state.product);
+    const dispatch = useDispatch()
+    const handleCompleteBuild = () => {
+        dispatch(setCompleteBuild(true))
+    }
+    useEffect(() => {
+        if (completeBuild) {
+            toast.success('PC Build Successful!');
+            dispatch(setCompleteBuild(false));
+        }
+    }, [completeBuild, dispatch]);
+
     return (
         <div className='pt-12'>
             <Head>
@@ -76,10 +90,11 @@ const CategoryPage = ({ allCategory }) => {
                     );
                 })}
 
-                <button disabled={products.length < 6} className='btn btn-primary mt-6 w-full flex items-center'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+                <button onClick={handleCompleteBuild} disabled={products.length < 6} className='btn btn-primary mt-6 w-full flex items-center'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
                     <path fillRule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clipRule="evenodd" />
                 </svg>
                     Complete Build</button>
+                <ToastContainer></ToastContainer>
 
             </div>
         </div>
