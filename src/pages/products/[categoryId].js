@@ -1,10 +1,20 @@
 import RootLayout from '@/components/Layouts/RootLayout';
 import Products from '@/components/UI/Products';
+import Head from 'next/head';
 import React from 'react';
 
 const ProductsPage = ({ products }) => {
     return (
         <div>
+            <Head>
+                <title>PC Net - Products</title>
+                <meta
+                    name="description"
+                    content="This is PC Builder application made by next-js"
+                />
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <link rel="icon" href="/favicon.ico" />
+            </Head>
             <Products products={products}></Products>
         </div>
     );
