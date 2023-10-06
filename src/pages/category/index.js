@@ -27,7 +27,7 @@ const CategoryPage = ({ allCategory }) => {
                 </h1>
             </div>
 
-            <div className='lg:w-[60%] w-[90%] mx-auto shadow-xl p-8 bg-white'>
+            <div className='lg:w-[60%] w-[90%] mx-auto shadow-xl p-8 bg-white rounded-lg'>
                 {allCategory.map((category) => {
                     const categoryId = category._id;
                     const categoryProduct = products.find((product) => product.category._id === categoryId);
@@ -35,7 +35,7 @@ const CategoryPage = ({ allCategory }) => {
                     return (
                         <div
                             key={categoryId}
-                            className='p-4 border border-gray-300 mt-4 flex lg:flex-row flex-col justify-between items-center gap-5'
+                            className='p-4 border border-gray-300 mt-4 flex lg:flex-row flex-col justify-between items-center gap-5 rounded-lg'
                         >
                             <div className='flex flex-col justify-center lg:items-start items-center'>
                                 <Image

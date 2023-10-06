@@ -25,7 +25,7 @@ const CategoryProducts = ({ products }) => {
 
                 {
                     products?.map((product) => (
-                        <div key={product._id} className="rounded-2xl flex flex-col items-center justify-between p-5 shadow-md border border-gray-100 hover:shadow-2xl hover:scale-[102%] transition-all bg-white">
+                        <div key={product._id} className="rounded-lg flex flex-col items-center justify-between p-5 shadow-md border border-gray-100 hover:shadow-2xl hover:scale-[102%] transition-all bg-white">
                             {/* <img src={product?.image} alt="product" width={300} /> */}
                             <Image
                                 src={product?.image}

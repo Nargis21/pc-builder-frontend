@@ -9,7 +9,7 @@ const Categories = ({ categories }) => {
                 {
                     categories?.map((category) => (
                         <Link key={category._id} href={`products/${category._id}`} >
-                            <div className="rounded-2xl flex flex-col items-center justify-between p-5 shadow-md border border-gray-100 hover:shadow-2xl hover:scale-[102%] transition-all bg-white">
+                            <div className="rounded-lg flex flex-col items-center justify-between p-5 shadow-md border border-gray-100 hover:shadow-2xl hover:scale-[102%] transition-all bg-white">
                                 {/* <img src={category?.image} alt="category" width={300} /> */}
                                 <Image
                                     src={category?.image}
