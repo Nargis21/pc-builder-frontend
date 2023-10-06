@@ -27,7 +27,7 @@ const CategoryPage = ({ allCategory }) => {
                 </h1>
             </div>
 
-            <div className='lg:w-[60%] w-[90%] mx-auto shadow-xl p-8'>
+            <div className='lg:w-[60%] w-[90%] mx-auto shadow-xl p-8 bg-white'>
                 {allCategory.map((category) => {
                     const categoryId = category._id;
                     const categoryProduct = products.find((product) => product.category._id === categoryId);

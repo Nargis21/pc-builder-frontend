@@ -1,10 +1,11 @@
 import { useGetCategoriesQuery } from '@/redux/api/apiSlice';
+import { signOut, useSession } from 'next-auth/react';
 import Link from 'next/link';
 import React from 'react';
 import { FaComputer } from "react-icons/fa";
 
 const Navbar = () => {
-
+    const { data: session } = useSession()
     const { data, error, isLoading } = useGetCategoriesQuery()
 
     const menuItems = (
@@ -31,6 +32,17 @@ const Navbar = () => {
                 >
                     PC Builder
                 </Link>
+            </li>
+            <li>
+                {
+                    !session?.user ? <Link
+                        href="/login"
+                        className="border border-white text-white rounded px-4 py-2 hover:bg-white ml-2"
+                    >
+                        Login
+                    </Link> : <p className="border border-white text-white rounded px-4 py-2 hover:bg-white ml-2" onClick={() => signOut()}>Logout</p>
+                }
+
             </li>
 
             {/* <li>
