@@ -1,4 +1,5 @@
 import RootLayout from '@/components/Layouts/RootLayout';
+import Banner from '@/components/UI/Banner';
 import Categories from '@/components/UI/Categories';
 import Products from '@/components/UI/Products';
 import Head from 'next/head';
@@ -17,6 +18,7 @@ const HomePage = ({ products, categories }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Banner></Banner>
       <div className='font-semibold text-center pt-10'>
         <h1 className='text-2xl'>Featured Products</h1>
         <p className='pt-2'>Check & Get Your Desired Product!</p>
