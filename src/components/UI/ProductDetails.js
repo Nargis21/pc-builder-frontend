@@ -4,7 +4,7 @@ import StarRating from "./StartRating";
 const ProductDetails = ({ product }) => {
     const keyFeaturesArray = Object.entries(product.key_features).map(([key, value]) => `${key}: ${value}`);
     return (
-        <div className="lg:flex mx-auto items-center border-b border-gray-300 lg:w-[80%] w-[95%]">
+        <div className="lg:flex mx-auto items-center border-b border-gray-300 lg:w-[80%] w-[95%] pt-12">
             <div className="lg:w-[50%]">
                 <Image
                     src={product?.image}
