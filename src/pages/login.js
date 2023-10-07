@@ -19,6 +19,7 @@ const Login = () => {
             </Head>
             <div className='flex items-center justify-center min-h-screen'>
                 <div className='lg:w-[30%] w-[95%] p-12 shadow-2xl rounded-lg bg-white'>
+                    <h1 className='text-xl font-semibold pb-8 text-center'>Login</h1>
                     <button className=' border-2 border-indigo-500 hover:bg-indigo-500 text-black rounded px-4 py-2  hover:text-white flex items-center justify-center gap-2 font-semibold w-full mb-4' onClick={() => signIn('github', { callbackUrl: 'https://pc-builder-nu-two.vercel.app' })}>
                         <Image
                             src='https://cdn-icons-png.flaticon.com/512/25/25231.png'

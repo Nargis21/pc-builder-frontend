@@ -4,7 +4,7 @@ import React from 'react';
 
 const Categories = ({ categories }) => {
     return (
-        <div className='lg:w-[80%] w-[90%] mx-auto'>
+        <div className='lg:w-[80%] w-[90%] mx-auto pb-12'>
             <div className="p-10 grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-6">
                 {
                     categories?.map((category) => (

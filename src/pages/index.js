@@ -19,7 +19,7 @@ const HomePage = ({ products, categories }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Banner></Banner>
-      <div className='font-semibold text-center pt-10'>
+      <div className='font-semibold text-center pt-10 bg-gray-200'>
         <h1 className='text-2xl'>Featured Products</h1>
         <p className='pt-2'>Check & Get Your Desired Product!</p>
       </div>
