@@ -22,7 +22,7 @@ const CategoryPage = ({ allCategory }) => {
     }, [completeBuild, dispatch]);
 
     return (
-        <div className='pt-12'>
+        <div className='py-12'>
             <Head>
                 <title>PC Net - PC Builder</title>
                 <meta
